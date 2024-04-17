@@ -30,7 +30,7 @@ async function loadArticleFile(
   const mdFiles = commit.files!.filter((f) => articleFileRegex.test(f.filename!));
   core.debug(`Found ${mdFiles.length} markdown files`);
   if (mdFiles.length == 0) {
-    throw new Error('No markdown files found');
+    throw new Error('No markdown (MD. OR MDX) files found');
   }
 
   const newArticle = mdFiles[0];
